@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1000px) {
+   .nav-floating{
+      display: none;
+   }
+
+   .nav-origin ul li{
+      display: none;
+   }
+
+   .svg-ham-logo{
+      display: block;
+   }
+}
+
+@media only screen and (min-width: 1000px){
+   .mobile-menu{
+      display: none;
+   }
+}

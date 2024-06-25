@@ -16,4 +16,8 @@
    .mobile-menu{
       display: none;
    }
+
+   .svg-ham-logo{
+      display: none !important;
+   }
 }

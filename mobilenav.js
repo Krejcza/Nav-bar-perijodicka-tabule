@@ -1,12 +1,43 @@
 let hamburger = document.querySelector('.svg-ham-logo');
-let menu = document.querySelector('.mobile-menu ul');
+let menu = document.querySelector('.mobile-menu');
 let svgCrossLogo = document.querySelector('.svg-cross-logo');
+let overlay = document.querySelector('.overlay');
+let body = document.body
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
-   let hamburger = document.querySelector('.svg-ham-logo');
-   let menu = document.querySelector('.mobile-menu');
 
    hamburger.addEventListener('click', function(){
        menu.classList.toggle('open');
+       svgCrossLogo.style.display = 'block'
+       hamburger.style.display = 'none'
+       overlay.classList.toggle('active');
+       body.classList.toggle('no-scroll')
+      
+       svgCrossLogo.addEventListener('click', function(){
+         body.classList.remove('no-scroll')
+       })
    });
+
+   svgCrossLogo.addEventListener('click', function(){
+      menu.classList.toggle('open');
+      svgCrossLogo.style.display = 'none'
+      hamburger.style.display = 'block'
+      overlay.classList.remove('active');
+   })
+
+   window.addEventListener('resize', function() {
+      menu.classList.remove('open');
+      svgCrossLogo.style.display = 'none'
+      hamburger.style.display = 'block'
+      overlay.classList.remove('active');
+  });
+
+  window.addEventListener('scroll', function() {
+   overlay.classList.remove('active');
+  })
+
+
+   
 });
